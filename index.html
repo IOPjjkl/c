@@ -30,14 +30,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 15vh;
-            gap: 30px;
+            margin-top: 10vh;
+            gap: 20px;
             z-index: 1;
             background: rgba(255, 255, 255, 0.08);
-            padding: 60px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(107, 61, 143, 0.1);
-            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(107, 61, 143, 0.1);
+            backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             animation: pulseContainer 4s ease-in-out infinite;
         }
@@ -45,29 +45,29 @@
             display: none;
         }
         .logo {
-            width: 160px;
+            width: 120px;
             height: auto;
-            filter: drop-shadow(0 5px 15px rgba(107, 61, 143, 0.5));
+            filter: drop-shadow(0 4px 12px rgba(107, 61, 143, 0.5));
             animation: floatAndRotate 3s ease-in-out infinite;
         }
         .error-icon {
-            font-size: 90px;
+            font-size: 70px;
             color: #d4a8ff;
-            text-shadow: 0 0 15px rgba(212, 168, 255, 0.5);
+            text-shadow: 0 0 12px rgba(212, 168, 255, 0.5);
             animation: bounceAndGlow 2s ease-in-out infinite;
         }
         h1 {
-            font-size: 36px;
+            font-size: 28px;
             color: #ffffff;
             margin: 0;
             font-weight: 700;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             animation: textWave 3s ease-in-out infinite;
         }
         p {
             color: #d3d6e0;
             margin: 0;
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 300;
             animation: fadeInOut 4s ease-in-out infinite;
         }
@@ -75,30 +75,30 @@
             background: linear-gradient(45deg, #b57eff, #d4a8ff);
             color: #ffffff;
             border: none;
-            padding: 18px 50px;
-            font-size: 20px;
+            padding: 14px 40px;
+            font-size: 16px;
             font-weight: 600;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(181, 126, 255, 0.5);
+            box-shadow: 0 4px 15px rgba(181, 126, 255, 0.5);
             animation: buttonShimmer 3s ease-in-out infinite;
         }
         .retry-button:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(181, 126, 255, 0.7);
+            box-shadow: 0 6px 25px rgba(181, 126, 255, 0.7);
         }
         .fake-mute-button {
             background: linear-gradient(45deg, #d4a8ff, #e6c3ff);
             color: #ffffff;
-            padding: 20px 60px;
-            font-size: 22px;
+            padding: 16px 50px;
+            font-size: 18px;
             font-weight: 600;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: not-allowed;
             transition: transform 0.3s ease;
-            box-shadow: 0 5px 20px rgba(212, 168, 255, 0.5);
+            box-shadow: 0 4px 15px rgba(212, 168, 255, 0.5);
             animation: buttonPulse 2s ease-in-out infinite;
         }
         .fake-mute-button:active {
@@ -131,23 +131,23 @@
             100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
         @keyframes pulseContainer {
-            0% { box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(107, 61, 143, 0.1); }
-            50% { box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(107, 61, 143, 0.2); }
-            100% { box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(107, 61, 143, 0.1); }
+            0% { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(107, 61, 143, 0.1); }
+            50% { box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), inset 0 0 25px rgba(107, 61, 143, 0.2); }
+            100% { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(107, 61, 143, 0.1); }
         }
         @keyframes floatAndRotate {
             0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(5deg); }
+            50% { transform: translateY(-12px) rotate(5deg); }
             100% { transform: translateY(0) rotate(0deg); }
         }
         @keyframes bounceAndGlow {
-            0% { transform: scale(1); text-shadow: 0 0 15px rgba(212, 168, 255, 0.5); }
-            50% { transform: scale(1.1); text-shadow: 0 0 25px rgba(212, 168, 255, 0.7); }
-            100% { transform: scale(1); text-shadow: 0 0 15px rgba(212, 168, 255, 0.5); }
+            0% { transform: scale(1); text-shadow: 0 0 12px rgba(212, 168, 255, 0.5); }
+            50% { transform: scale(1.1); text-shadow: 0 0 20px rgba(212, 168, 255, 0.7); }
+            100% { transform: scale(1); text-shadow: 0 0 12px rgba(212, 168, 255, 0.5); }
         }
         @keyframes textWave {
             0% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+            50% { transform: translateY(-4px); }
             100% { transform: translateY(0); }
         }
         @keyframes fadeInOut {
@@ -161,35 +161,98 @@
             100% { background-position: 0% 50%; }
         }
         @keyframes buttonPulse {
-            0% { transform: scale(1); box-shadow: 0 5px 20px rgba(212, 168, 255, 0.5); }
-            50% { transform: scale(1.02); box-shadow: 0 7px 25px rgba(212, 168, 255, 0.7); }
-            100% { transform: scale(1); box-shadow: 0 5px 20px rgba(212, 168, 255, 0.5); }
+            0% { transform: scale(1); box-shadow: 0 4px 15px rgba(212, 168, 255, 0.5); }
+            50% { transform: scale(1.02); box-shadow: 0 6px 20px rgba(212, 168, 255, 0.7); }
+            100% { transform: scale(1); box-shadow: 0 4px 15px rgba(212, 168, 255, 0.5); }
         }
         .telegram-link {
             position: fixed;
-            bottom: 30px;
+            bottom: 20px;
             color: rgba(255, 255, 255, 0.7);
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 500;
             text-decoration: none;
             transition: all 0.3s ease;
             z-index: 2;
-            padding: 10px 20px;
-            border-radius: 15px;
+            padding: 8px 16px;
+            border-radius: 12px;
             background: rgba(212, 168, 255, 0.1);
-            box-shadow: 0 3px 15px rgba(212, 168, 255, 0.3);
+            box-shadow: 0 2px 12px rgba(212, 168, 255, 0.3);
             animation: linkFloat 3s ease-in-out infinite;
         }
         .telegram-link:hover {
             color: #ffffff;
             background: rgba(212, 168, 255, 0.2);
-            box-shadow: 0 5px 25px rgba(212, 168, 255, 0.5);
+            box-shadow: 0 4px 20px rgba(212, 168, 255, 0.5);
             transform: translateY(-3px);
         }
         @keyframes linkFloat {
             0% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+            50% { transform: translateY(-4px); }
             100% { transform: translateY(0); }
+        }
+
+        /* Адаптация для мобильных устройств */
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 5vh;
+                padding: 30px;
+                gap: 15px;
+                width: 80%;
+            }
+            .logo {
+                width: 100px;
+            }
+            .error-icon {
+                font-size: 60px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .retry-button {
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+            .fake-mute-button {
+                padding: 14px 40px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin-top: 2vh;
+                padding: 20px;
+                width: 90%;
+            }
+            .logo {
+                width: 80px;
+            }
+            .error-icon {
+                font-size: 50px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 12px;
+            }
+            .retry-button {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+            .fake-mute-button {
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+            .telegram-link {
+                bottom: 10px;
+                font-size: 14px;
+                padding: 6px 12px;
+            }
         }
     </style>
 </head>
@@ -205,11 +268,11 @@
     </div>
 
     <div class="container hidden" id="soundPlaying">
-        <img src="assets/1.png" alt="Логотип бренда" class="logo" loading="lazy">
+        <img src="assets/ston.png" alt="Логотип бренда" class="logo" loading="lazy">
         <button class="fake-mute-button">🔇 Заглушить</button>
     </div>
 
-    <a href="https://t.me/soundtagtutorial" class="telegram-link" target="_blank">t.me/soundtagtutorial</a>
+    <a href="https://t.me/soundtagtutorial" class="telegram-link" id="telegramLink" target="_blank">t.me/soundtagtutorial</a>
 
     <audio id="funSound" src="assets/ston.mp3" loop preload="auto"></audio>
 
@@ -220,6 +283,7 @@
             const retryButton = document.getElementById('retryButton');
             const soundPlaying = document.getElementById('soundPlaying');
             const sound = document.getElementById('funSound');
+            const telegramLink = document.getElementById('telegramLink');
 
             sound.volume = 1.0;
 
@@ -236,8 +300,14 @@
                     });
             }
 
+            // Включение звука только по клику на retryButton или body, но не на telegramLink
             retryButton.addEventListener('click', playSound);
             document.body.addEventListener('click', playSound, { once: true });
+
+            // Предотвращение воспроизведения звука при клике на Telegram-ссылку
+            telegramLink.addEventListener('click', function(event) {
+                event.stopPropagation(); // Предотвращаем всплытие события до body
+            });
         });
     </script>
 </body>
