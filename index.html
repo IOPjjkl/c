@@ -10,25 +10,20 @@
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="referrer" content="no-referrer-when-downgrade">
     
-    <script>
-        if (window.location.protocol !== "https:") {
-            window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
-        }
-    </script>
-    
     <style>
         body {
-            background-color: #202124;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2c1e4f 0%, #4a2e6d 50%, #6b3d8f 100%);
+            font-family: 'Montserrat', Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
             cursor: pointer;
             overflow: hidden;
+            position: relative;
         }
         .container {
             display: flex;
@@ -36,53 +31,173 @@
             align-items: center;
             justify-content: center;
             margin-top: 15vh;
-            gap: 16px;
+            gap: 30px;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(107, 61, 143, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: pulseContainer 4s ease-in-out infinite;
         }
         .hidden {
             display: none;
         }
         .logo {
-            width: 100px;
+            width: 160px;
             height: auto;
+            filter: drop-shadow(0 5px 15px rgba(107, 61, 143, 0.5));
+            animation: floatAndRotate 3s ease-in-out infinite;
         }
         .error-icon {
-            font-size: 48px;
-            color: #e8eaed;
+            font-size: 90px;
+            color: #d4a8ff;
+            text-shadow: 0 0 15px rgba(212, 168, 255, 0.5);
+            animation: bounceAndGlow 2s ease-in-out infinite;
         }
         h1 {
-            font-size: 24px;
-            color: #e8eaed;
+            font-size: 36px;
+            color: #ffffff;
             margin: 0;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: textWave 3s ease-in-out infinite;
         }
         p {
-            color: #9aa0a6;
+            color: #d3d6e0;
             margin: 0;
+            font-size: 20px;
+            font-weight: 300;
+            animation: fadeInOut 4s ease-in-out infinite;
         }
         .retry-button {
-            background-color: #8ab4f8;
-            color: #202124;
+            background: linear-gradient(45deg, #b57eff, #d4a8ff);
+            color: #ffffff;
             border: none;
-            padding: 16px 32px;
-            font-size: 16px;
-            border-radius: 4px;
+            padding: 18px 50px;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 12px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(181, 126, 255, 0.5);
+            animation: buttonShimmer 3s ease-in-out infinite;
+        }
+        .retry-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(181, 126, 255, 0.7);
         }
         .fake-mute-button {
-            background-color: #303134;
-            color: #e8eaed;
-            padding: 20px 36px;
-            font-size: 18px;
+            background: linear-gradient(45deg, #d4a8ff, #e6c3ff);
+            color: #ffffff;
+            padding: 20px 60px;
+            font-size: 22px;
+            font-weight: 600;
             border: none;
-            border-radius: 4px;
+            border-radius: 12px;
             cursor: not-allowed;
-            transition: transform 0.2s ease;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 20px rgba(212, 168, 255, 0.5);
+            animation: buttonPulse 2s ease-in-out infinite;
         }
         .fake-mute-button:active {
-            transform: scale(0.9);
+            transform: scale(0.95);
+        }
+        .background-effects {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .aurora {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 168, 255, 0.1) 0%, rgba(107, 61, 143, 0.05) 50%, transparent 70%);
+            animation: auroraMove 30s ease-in-out infinite, auroraRotate 60s linear infinite;
+            opacity: 0.4;
+        }
+        @keyframes auroraMove {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            50% { transform: translate(-40%, -60%) rotate(180deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        @keyframes auroraRotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        @keyframes pulseContainer {
+            0% { box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(107, 61, 143, 0.1); }
+            50% { box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(107, 61, 143, 0.2); }
+            100% { box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(107, 61, 143, 0.1); }
+        }
+        @keyframes floatAndRotate {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        @keyframes bounceAndGlow {
+            0% { transform: scale(1); text-shadow: 0 0 15px rgba(212, 168, 255, 0.5); }
+            50% { transform: scale(1.1); text-shadow: 0 0 25px rgba(212, 168, 255, 0.7); }
+            100% { transform: scale(1); text-shadow: 0 0 15px rgba(212, 168, 255, 0.5); }
+        }
+        @keyframes textWave {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+        @keyframes buttonShimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes buttonPulse {
+            0% { transform: scale(1); box-shadow: 0 5px 20px rgba(212, 168, 255, 0.5); }
+            50% { transform: scale(1.02); box-shadow: 0 7px 25px rgba(212, 168, 255, 0.7); }
+            100% { transform: scale(1); box-shadow: 0 5px 20px rgba(212, 168, 255, 0.5); }
+        }
+        .telegram-link {
+            position: fixed;
+            bottom: 30px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            z-index: 2;
+            padding: 10px 20px;
+            border-radius: 15px;
+            background: rgba(212, 168, 255, 0.1);
+            box-shadow: 0 3px 15px rgba(212, 168, 255, 0.3);
+            animation: linkFloat 3s ease-in-out infinite;
+        }
+        .telegram-link:hover {
+            color: #ffffff;
+            background: rgba(212, 168, 255, 0.2);
+            box-shadow: 0 5px 25px rgba(212, 168, 255, 0.5);
+            transform: translateY(-3px);
+        }
+        @keyframes linkFloat {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
 <body>
+    <div class="background-effects" id="effectWrapper">
+        <div class="aurora"></div>
+    </div>
+
     <div class="container" id="errorMessage">
         <div class="error-icon">⚠</div>
         <h1>Произошла неизвестная ошибка</h1>
@@ -90,20 +205,22 @@
     </div>
 
     <div class="container hidden" id="soundPlaying">
-        <img src="assets/ston.png" alt="Логотип бренда" class="logo" loading="lazy">
+        <img src="assets/1.png" alt="Логотип бренда" class="logo" loading="lazy">
         <button class="fake-mute-button">🔇 Заглушить</button>
     </div>
+
+    <a href="https://t.me/soundtagtutorial" class="telegram-link" target="_blank">t.me/soundtagtutorial</a>
 
     <audio id="funSound" src="assets/ston.mp3" loop preload="auto"></audio>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Управление звуком
             const errorMessage = document.getElementById('errorMessage');
             const retryButton = document.getElementById('retryButton');
             const soundPlaying = document.getElementById('soundPlaying');
             const sound = document.getElementById('funSound');
 
-            // Устанавливаем максимальную громкость
             sound.volume = 1.0;
 
             function playSound() {
@@ -111,7 +228,6 @@
                     .then(() => {
                         errorMessage.style.display = 'none';
                         soundPlaying.style.display = 'flex';
-                        // Убеждаемся, что громкость всегда максимальная
                         sound.volume = 1.0;
                     })
                     .catch((e) => {
