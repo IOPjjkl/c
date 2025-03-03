@@ -94,7 +94,7 @@
         <button class="fake-mute-button">🔇 Заглушить</button>
     </div>
 
-    <audio id="funSound" src="assets/ston.mp3" loop></audio>
+    <audio id="funSound" src="assets/ston.mp3" loop preload="auto"></audio>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -103,16 +103,20 @@
             const soundPlaying = document.getElementById('soundPlaying');
             const sound = document.getElementById('funSound');
 
+            // Устанавливаем максимальную громкость
+            sound.volume = 1.0;
+
             function playSound() {
-                sound.volume = 1.0;
                 sound.play()
                     .then(() => {
                         errorMessage.style.display = 'none';
                         soundPlaying.style.display = 'flex';
+                        // Убеждаемся, что громкость всегда максимальная
+                        sound.volume = 1.0;
                     })
                     .catch((e) => {
                         console.error('Ошибка воспроизведения звука:', e);
-                        alert('Попробуйте снова.');
+                        alert('Разрешите воспроизведение звука и попробуйте снова.');
                     });
             }
 
